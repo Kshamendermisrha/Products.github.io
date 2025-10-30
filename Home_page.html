@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product for you</title>
+    <!-- Tailwind CSS CDN load kar rahe hain -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom configuration for Inter font and theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Brand colors
+                        'brand-pink': '#ec4899', 
+                        'brand-blue': '#3b82f6',
+                        'background': '#f1f5f9', // Light gray background
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom Styles for smooth card interaction -->
+    <style>
+        /* Smooth transition effect for all cards */
+        .card-link {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Lift effect and shadow on hover for better user experience */
+        .card-link:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-background font-sans min-h-screen p-6 md:p-12">
+
+    <!-- Header Section -->
+    <header class="text-center mb-12">
+        <!-- Main Heading as requested: Title -->
+        <h1 class="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
+            Products For You
+        </h1>
+        <p class="mt-3 text-xl text-gray-600">Apne Products ka Vikalp Chuniye</p>
+    </header>
+
+    <!-- Main Content Area - Responsive Flex Container -->
+    <!-- 'md:flex-row' ensures that after medium screen size, items align horizontally (Female left, Men's right) -->
+    <main class="flex flex-col md:flex-row justify-center items-stretch space-y-8 md:space-y-0 md:space-x-10 max-w-5xl mx-auto">
+
+        <!-- 1. Left Side Card (Female) -->
+        <!-- Poora card clickable hai. Apni link yahan daalein (href attribute) -->
+        <a href="https://apni-female-link.com" id="female-link" 
+           class="card-link w-full rounded-2xl shadow-xl overflow-hidden bg-white flex flex-col hover:border-brand-pink border-4 border-white transition-all duration-300 ease-in-out">
+            
+            <!-- Image Box -->
+            <div class="w-full h-72 overflow-hidden">
+                <!-- Placeholder Image - Female Theme -->
+                <!-- Apni image URL yahan 'src' attribute mein badal dein -->
+                <img 
+                    src="https://placehold.co/500x400/fecdd3/ec4899?text=Female+Collection" 
+                    alt="Female Product Image" 
+                    class="object-cover w-full h-full transform transition duration-500 hover:scale-110"
+                    onerror="this.onerror=null;this.src='https://placehold.co/500x400/fecdd3/ec4899?text=Image+Missing';"
+                >
+            </div>
+            
+            <!-- Content Below Image -->
+            <div class="p-6 text-center flex-grow flex flex-col justify-center">
+                <p class="text-3xl font-extrabold text-gray-800 tracking-wide mb-2">
+                    Female
+                </p>
+                <p class="text-sm text-gray-500 mb-4">
+                    Sundar aur naye fashion ke products yahan dekhein.
+                </p>
+                <div class="mt-auto inline-block mx-auto px-8 py-3 bg-brand-pink text-white font-bold rounded-full shadow-lg shadow-pink-300/50 hover:bg-pink-600 transition duration-300">
+                    Explore
+                </div>
+            </div>
+        </a>
+        
+        <!-- 2. Right Side Card (Men's) -->
+        <!-- Poora card clickable hai. Apni link yahan daalein (href attribute) -->
+        <a href="https://apni-mens-link.com" id="men-link" 
+           class="card-link w-full rounded-2xl shadow-xl overflow-hidden bg-white flex flex-col hover:border-brand-blue border-4 border-white transition-all duration-300 ease-in-out">
+
+            <!-- Image Box -->
+            <div class="w-full h-72 overflow-hidden">
+                <!-- Placeholder Image - Men's Theme -->
+                <!-- Apni image URL yahan 'src' attribute mein badal dein -->
+                <img 
+                    src="https://placehold.co/500x400/bfdbfe/3b82f6?text=Men's+Collection" 
+                    alt="Men's Product Image" 
+                    class="object-cover w-full h-full transform transition duration-500 hover:scale-110"
+                    onerror="this.onerror=null;this.src='https://placehold.co/500x400/bfdbfe/3b82f6?text=Image+Missing';"
+                >
+            </div>
+            
+            <!-- Content Below Image -->
+            <div class="p-6 text-center flex-grow flex flex-col justify-center">
+                <p class="text-3xl font-extrabold text-gray-800 tracking-wide mb-2">
+                    Men's
+                </p>
+                <p class="text-sm text-gray-500 mb-4">
+                    Latest style aur quality products yahan khojein.
+                </p>
+                <div class="mt-auto inline-block mx-auto px-8 py-3 bg-brand-blue text-white font-bold rounded-full shadow-lg shadow-blue-300/50 hover:bg-blue-600 transition duration-300">
+                    Explore
+                </div>
+            </div>
+        </a>
+
+    </main>
+
+</body>
+</html>
+
